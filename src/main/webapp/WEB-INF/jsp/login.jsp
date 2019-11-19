@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<%--
+  Created by IntelliJ IDEA.
+  User: anggun.agung
+  Date: 5/21/2019
+  Time: 12:16 PM
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<html lang="en">
+<head>
+    <title>Login Admin</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="static/login/images/icons/favicon.ico"/>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="static/login/vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="static/login/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="static/login/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="static/login/vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="static/login/vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="static/login/vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="static/login/vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="static/login/vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="static/login/css/util.css">
+    <link rel="stylesheet" type="text/css" href="static/login/css/main.css">
+    <link rel="stylesheet" type="text/css" href="static/new/sweetalert/sweetalert.css">
+
+       <!--===============================================================================================-->
+</head>
+<body>
+
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100 p-l-85 p-r-85 p-t-55 p-b-55">
+            <form action="/login-user" method="POST" class="login100-form validate-form flex-sb flex-w">
+					<span class="login100-form-title p-b-32">
+                        <div align="center">
+                        <b>Gunadarma Bank</b><br>
+                        <h5>Teller Login Page</h5>
+                            </div>
+					</span>
+
+                <span class="txt1 p-b-11">
+						Username
+					</span>
+                <p style="color:red" style="text-align:center">${error}</p>
+                <div class="wrap-input100 validate-input m-b-36" data-validate = "Username is required">
+                    <input placeholder="USERNAME" class="input100" type="text" name="username" value="${login.username}">
+                    <span class="focus-input100"></span>
+                </div>
+
+                <span class="txt1 p-b-11">
+						Password
+					</span>
+                <div class="wrap-input100 validate-input m-b-12" data-validate = "Password is required">
+						<span class="btn-show-pass">
+							<i class="fa fa-eye"></i>
+						</span>
+                    <input placeholder="PASSWORD" class="input100" type="password" name="password" value="${login.password}">
+                    <span class="focus-input100"></span>
+                </div>
+
+                <%--                <div class="flex-sb-m w-full p-b-48">--%>
+                <%--                    <div class="contact100-form-checkbox">--%>
+                <%--                        <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">--%>
+                <%--                        <label class="label-checkbox100" for="ckb1">--%>
+                <%--                            Remember me--%>
+                <%--                        </label>--%>
+                <%--                    </div>--%>
+
+                <%--                    <div>--%>
+                <%--                        <a href="#" class="txt3">--%>
+                <%--                            Forgot Password?--%>
+                <%--                        </a>--%>
+                <%--                    </div>--%>
+                <%--                </div>--%>
+
+                <div class="container-login100-form-btn">
+                    <button  onclick="validation();" class="login100-form-btn">
+                        Login
+                    </button>
+                    <script src="static/new/sweetalert/sweetalert.min.js"></script>
+                 <script type="text/javascript">
+                    function validation() {
+                        var username= document.getElementById('username').value;
+                        var password= document.getElementById('password').value;
+
+                        if ((username== username)&&(password==password)){
+                            swall("good job!","you success to login","success");
+                        }
+                        else {
+                            sweetAlert("oops..","username or password was wrong!","error");
+                        }
+                    }
+                </script>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+<script src="static/login/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+<script src="static/login/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+<script src="static/login/vendor/bootstrap/js/popper.js"></script>
+<script src="static/login/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+<script src="static/login/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+<script src="static/login/vendor/daterangepicker/moment.min.js"></script>
+<script src="static/login/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+<script src="static/login/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+<script src="static/login/js/main.js"></script>
+
+</body>
+</html>
